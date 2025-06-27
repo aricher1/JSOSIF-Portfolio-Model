@@ -48,7 +48,6 @@ qual_risk = '2'
 #print correlations and detialed risk report
 print(get_correlations(Holding(ticker, sector), current_port))
 print_risk_report(Holding(ticker, sector, qual_risk), current_port)
-current_port.get_weekly_update()
 
 #plot various risk and performance charts
 show_rolling_volatility_graph(ticker, download_graph=False)
@@ -59,3 +58,6 @@ plot_stock_chart(ticker)
 
 #display the portfolios correlation matrix and heatmap
 current_port.show_corr_matrix()
+
+#print weekly update for PnL
+current_port.get_weekly_update()
