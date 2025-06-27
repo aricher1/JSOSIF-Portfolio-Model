@@ -39,7 +39,7 @@ def simulate_portfolio_transactions(portfolio):
     )
 
     sell_transaction = Transaction(
-        holding=Holding('PFE', shares=180, sector='TMT'),
+        holding=Holding('PFE', shares=180, sector='HLT'),
         side='SELL'
     )
 
