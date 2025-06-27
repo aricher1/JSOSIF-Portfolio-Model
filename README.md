@@ -59,6 +59,15 @@ Generates a multi-part risk summary for a given ticker:
 
 ---
 
+### `transactions.py`
+Simulates predefined portfolio transactions:
+- Includes buy and sell operations via `Transaction` and `Holding` objects
+- Updates portfolio state accordingly
+- Useful for rebalancing workflows or scenario testing
+- Includes optional holding printout for post-simulation sanity checks
+
+---
+
 ### `var_estimation.py`
 Calculates historical Value-at-Risk (VaR):
 - Based on portfolio’s log return distribution
