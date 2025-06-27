@@ -161,13 +161,28 @@ def plot_log_returns_histogram(tickers, start=TWO_YRS, end=NOW):
     df = df.dropna()
     log_returns = np.log(df / df.shift(1)).dropna()
 
+    # Ensure tickers is a list
+    if isinstance(tickers, str):
+        tickers = [tickers]
+    
     plt.figure(figsize=(12, 4))
     for i, ticker in enumerate(log_returns.columns):
+        data = log_returns[ticker]
+        mu = data.mean()
+        sigma = data.std()
+
         plt.subplot(1, len(tickers), i + 1)
-        plt.hist(log_returns[ticker], bins=50, alpha=0.75, edgecolor='black')
+        plt.hist(data, bins=50, alpha=0.75, edgecolor='black')
         plt.title(f'{ticker} Log Returns')
         plt.xlabel('Log Return')
         plt.ylabel('Frequency')
+
+        stats_label = f'μ = {mu:.4f}\nσ = {sigma:.4f}'
+        plt.text(0.95, 0.95, stats_label,
+                 ha='right', va='top',
+                 transform=plt.gca().transAxes,
+                 fontsize=10,
+                 bbox=dict(boxstyle="round,pad=0.3", edgecolor='gray', facecolor='white', alpha=0.8))
 
     plt.tight_layout()
     plt.show()
