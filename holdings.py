@@ -14,7 +14,7 @@ Sector codes:
 - FIN: Financials
 - HLT: Healthcare
 - TMT: Technology, Media, and Telecommunications
-- INR: Industrials and Real Estate
+- INR: Industrials and Natural Resources
 
 The file initializes the holdings list and ensures relevant price data
 (for USD/CAD FX rate) is loaded for currency adjustments where applicable.
