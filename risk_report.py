@@ -35,7 +35,7 @@ current_port = Portfolio(HOLDINGS, 80955.00) #$9076 CASH + $71879 BONDS
                                             - FIN: Financials
                                             - HLT: Healthcare
                                             - TMT: Technology, Media, and Telecommunications
-                                            - INR: Industirals and Real Estate
+                                            - INR: Industirals and Natural Resources
 * qual_risk = 'INSERT QUALITATIVE RISK TIER HERE' (1: High, 2: Medium, 3: Low)
 """
 
