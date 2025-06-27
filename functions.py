@@ -814,15 +814,12 @@ def get_dual_betas(ticker, benchmark="^GSPC", freq='M', start=FIVE_YRS, end=NOW)
     return_df = get_log_return_df(ticker, freq, start, end)
     benchmark_return_df = get_log_return_df(benchmark, freq, start, end)
 
-    # Ensure indices are aligned
     return_df = return_df.loc[benchmark_return_df.index.intersection(return_df.index)]
     benchmark_return_df = benchmark_return_df.loc[return_df.index]
 
-    # Create masks
     plus_mask = benchmark_return_df.iloc[:, 0] > 0
     minus_mask = benchmark_return_df.iloc[:, 0] < 0
 
-    # Apply masks (now aligned)
     plus_return_df = return_df[plus_mask]
     plus_benchmark_return_df = benchmark_return_df[plus_mask]
     minus_return_df = return_df[minus_mask]
