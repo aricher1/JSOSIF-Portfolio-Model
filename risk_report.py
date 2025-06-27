@@ -23,20 +23,21 @@ from plotting import (
     plot_stock_returns,
     plot_stock_chart,
 )
-from functions import Portfolio, Holding, Transaction, get_buy_amounts, print_risk_report, get_correlations
+from functions import Portfolio, Holding, print_risk_report, get_correlations
 from holdings import HOLDINGS
 
 current_port = Portfolio(HOLDINGS, 80955.00) #$9076 CASH + $71879 BONDS
 
 """
 * ticker = 'INSERT TICKER HERE'
-* sector = 'INSERT TICKER'S SECTOR HERE' Sectors (
-                                            CRL: Consumer and Retail
-                                            FIN: Financials
-                                            HLT: Healthcare
-                                            TMT: Technology, Media, and Telecommunications
-                                            INR: Industirals and Natural Resources
-                                            )
+* sector = 'INSERT TICKER'S SECTOR HERE' 
+Sectors (
+        CRL: Consumer and Retail
+        FIN: Financials
+        HLT: Healthcare
+        TMT: Technology, Media, and Telecommunications
+        INR: Industirals and Natural Resources
+        )
 * qual_risk = 'INSERT QUALITATIVE RISK TIER HERE' (1: High, 2: Medium, 3: Low)
 """
 
@@ -61,25 +62,3 @@ current_port.show_corr_matrix()
 
 #print weekly update for PnL
 current_port.get_weekly_update()
-
-# ======= Transaction Simulation ======= #
-
-# Define buy transaction: 'X' shares of 'X' in the 'X' sector
-buy_transaction = Transaction(
-    holding=Holding('MSFT', shares=10, sector='TMT'),
-    side='BUY'
-)
-
-# Define sell transaction: 'X' shares of 'X' in the 'X' sector
-sell_transaction = Transaction(
-    holding=Holding('NVDA', shares=5, sector='TMT'),
-    side='SELL'
-)
-
-# Run transaction simulation and update portfolio
-transactions = [buy_transaction, sell_transaction]
-current_port = current_port.simulate_transactions(transactions)
-
-# Uncomment for post-simulation sanity check for current holdings
-# print("Current tickers in portfolio:")
-# print([h.ticker for h in current_port.holdings])
