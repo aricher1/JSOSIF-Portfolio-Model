@@ -14,7 +14,7 @@ Sectors:
 * FIN: Financials
 * HLT: Healthcare
 * TMT: Technology, Media, and Telecommunications
-* INR: Industirals and Real Estate
+* INR: Industrials and Real Estate
 """
 
 get_price_df("USDCAD=X",fx_adj=False)
