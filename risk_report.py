@@ -42,8 +42,8 @@ Sectors (
 """
 
 # ======= User Inputs for Ticker Analysis ======= #
-ticker = 'NVDA'
-sector = 'TMT'
+ticker = 'ALL'
+sector = 'FIN'
 qual_risk = '2'
 
 #print correlations and detialed risk report

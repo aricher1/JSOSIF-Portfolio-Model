@@ -34,12 +34,12 @@ def simulate_portfolio_transactions(portfolio):
         Portfolio: Updated portfolio after transactions.
     """
     buy_transaction = Transaction(
-        holding=Holding('UNH', shares=15, sector='HLT'),
+        holding=Holding('MRK', shares=80, sector='HLT'),
         side='BUY'
     )
 
     sell_transaction = Transaction(
-        holding=Holding('PFE', shares=180, sector='HLT'),
+        holding=Holding('VRTX', shares=14, sector='HLT'),
         side='SELL'
     )
 
